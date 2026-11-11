@@ -1,0 +1,56 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.2)
+
+2026-11-11T09:25:14.565+05:00  INFO 23901 --- [           main] o.OpenBankingClientApiApplication        : Starting OpenBankingClientApiApplication using Java 17.0.20.1 with PID 23901 (/Users/uzmacboko/Desktop/OPEN BANKING CLIENT API/build/classes/java/main started by uzmacboko in /Users/uzmacboko/Desktop/OPEN BANKING CLIENT API)
+2026-11-11T09:25:14.566+05:00  INFO 23901 --- [           main] o.OpenBankingClientApiApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-11-11T09:25:14.903+05:00  INFO 23901 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-11T09:25:14.908+05:00  INFO 23901 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-11T09:25:14.908+05:00  INFO 23901 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-11T09:25:14.926+05:00  INFO 23901 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 343 ms
+2026-11-11T09:25:15.170+05:00  INFO 23901 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-11T09:25:15.173+05:00  INFO 23901 --- [           main] o.OpenBankingClientApiApplication        : Started OpenBankingClientApiApplication in 0.74 seconds (process running for 0.9)
+2026-11-11T09:25:15.173+05:00  WARN 23901 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-11T09:25:15.173+05:00  WARN 23901 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-11T09:26:25.005+05:00  INFO 23901 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-11T09:26:25.006+05:00  INFO 23901 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-11T09:26:25.006+05:00  INFO 23901 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-11-11T09:26:25.259+05:00  INFO 23901 --- [nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 113 ms
+2026-11-11T09:40:45.242+05:00  INFO 23901 --- [nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 49 ms
+2026-11-11T09:45:44.959+05:00  INFO 23901 --- [io-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-11T09:45:50.199+05:00  INFO 23901 --- [io-8080-exec-10] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@64e3dfe9
+2026-11-11T09:45:50.200+05:00  INFO 23901 --- [io-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-11T09:51:57.939+05:00  INFO 23901 --- [nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 36 ms
+2026-11-11T10:02:50.695+05:00  INFO 23901 --- [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-11T10:02:50.708+05:00  INFO 23901 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-11-11T10:02:50.721+05:00  INFO 23901 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-11-11T10:02:50.734+05:00  INFO 23901 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+> Task :bootRun FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun' (registered by plugin 'org.springframework.boot').
+> Process 'command '/opt/homebrew/Cellar/openjdk@17/17.0.20.1/libexec/openjdk.jdk/Contents/Home/bin/java'' finished with non-zero exit value 143 (this value may indicate that the process was terminated with the SIGTERM signal)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 37m 37s
+4 actionable tasks: 1 executed, 3 up-to-date
