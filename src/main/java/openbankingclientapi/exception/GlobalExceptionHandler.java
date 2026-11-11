@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
 
     @ApiResponses({
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400",
-                    description = "Majburiy maydon bo'sh, qiymat noto'g'ri yoki JSON noto'g'ri",
+                    description = "Отсутствует обязательный параметр, некорректное значение или некорректный JSON",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class), examples = {
                             @ExampleObject(name = "EMPTY_PARAM", value = """
                                     {"code":5001,"message":"EMPTY_PARAM","cause":"Отсутствует обязательный параметр.",
@@ -39,22 +39,22 @@ public class GlobalExceptionHandler {
                                     {"code":5002,"message":"INVALID_PARAM","cause":"Некорректное значение параметра.",
                                     "fields":["payload.pinfl"]}""")})),
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "403",
-                    description = "Hisobga kirish taqiqlangan",
+                    description = "Доступ к счету запрещен",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class),
                             examples = @ExampleObject(name = "ACC_TYPE_FORBIDDEN", value = """
                                     {"code":5003,"message":"ACC_TYPE_FORBIDDEN","cause":"Доступ к счету запрещен.",
                                     "fields":[]}"""))),
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "404",
-                    description = "API manzili noto'g'ri yozilgan",
+                    description = "Метод API не найден (неверный адрес)",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class),
                             examples = @ExampleObject(name = "NOT_FOUND", value = """
                                     {"code":404,"message":"NOT_FOUND","cause":"Метод API не найден: /api/v1/accounts/balancs",
                                     "fields":null}"""))),
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "405",
-                    description = "POST o'rniga boshqa HTTP metod yuborilgan",
+                    description = "HTTP метод не поддерживается (требуется POST)",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class),
                             examples = @ExampleObject(name = "METHOD_NOT_ALLOWED", value = """
-                                    {"code":405,"message":"METHOD_NOT_ALLOWED","cause":"HTTP метод не поддерживается: GET, kerak: POST",
+                                    {"code":405,"message":"METHOD_NOT_ALLOWED","cause":"HTTP метод не поддерживается: GET, требуется: POST",
                                     "fields":null}""")))
     })
     @ExceptionHandler(ApiException.class)
@@ -80,12 +80,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<Object> handleMethod(HttpRequestMethodNotSupportedException ex) {
         return http(ErrorCode.METHOD_NOT_ALLOWED,
-                ErrorCode.METHOD_NOT_ALLOWED.cause() + ": " + ex.getMethod() + ", kerak: POST", null);
+                ErrorCode.METHOD_NOT_ALLOWED.cause() + ": " + ex.getMethod() + ", требуется: POST", null);
     }
 
     @ApiResponses({
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "500",
-                    description = "Oracle SQL xatoligi yoki kutilmagan ichki xatolik",
+                    description = "Ошибка АБС (Oracle) или внутренняя системная ошибка",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class), examples = {
                             @ExampleObject(name = "ABS_ERROR", value = """
                                     {"code":9000,"message":"ABS_ERROR",
@@ -94,13 +94,13 @@ public class GlobalExceptionHandler {
                                     {"code":5000,"message":"SYSTEM_ERROR","cause":"Внутренняя системная ошибка: ...",
                                     "fields":null}""")})),
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "502",
-                    description = "ABS (Oracle) bilan ulanib bo'lmadi",
+                    description = "Ошибка соединения с АБС (Oracle)",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class),
                             examples = @ExampleObject(name = "ABS_BAD_GATEWAY", value = """
                                     {"code":9002,"message":"ABS_BAD_GATEWAY","cause":"Ошибка соединения с АБС.",
                                     "fields":null}"""))),
             @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "504",
-                    description = "ABS (Oracle) javob bermadi",
+                    description = "Истекло время ожидания ответа от АБС (Oracle)",
                     content = @Content(mediaType = JSON, schema = @Schema(implementation = ApiError.class),
                             examples = @ExampleObject(name = "ABS_TIMEOUT", value = """
                                     {"code":9004,"message":"ABS_TIMEOUT","cause":"Истекло время ожидания ответа от АБС.",
@@ -108,7 +108,7 @@ public class GlobalExceptionHandler {
     })
     @ExceptionHandler(DataAccessException.class)
     public ResponseEntity<Object> handleDb(DataAccessException ex) {
-        log.error("ABS (Oracle) xatoligi", ex);
+        log.error("Ошибка АБС (Oracle)", ex);
         if (ex instanceof CannotGetJdbcConnectionException) {
             return http(ErrorCode.ABS_BAD_GATEWAY, ErrorCode.ABS_BAD_GATEWAY.cause(), null);
         }
@@ -121,7 +121,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleOther(Exception ex) {
-        log.error("Kutilmagan xatolik", ex);
+        log.error("Непредвиденная ошибка", ex);
         return http(ErrorCode.SYSTEM_ERROR, ErrorCode.SYSTEM_ERROR.cause() + ": " + ex.getMessage(), null);
     }
 
