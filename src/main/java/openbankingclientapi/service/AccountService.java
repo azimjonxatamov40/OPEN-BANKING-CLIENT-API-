@@ -103,10 +103,7 @@ public class AccountService {
                 AccountState.fromAbs(row.stateCode()),
                 AccountClassType.fromBalanceAccount(row.balanceAccount()),
                 AccountType.fromCode(null),
-                toIsoCurrency(row.currency()),
-                row.openDate(),
-                row.closeDate(),
-                null);
+                toIsoCurrency(row.currency()));
     }
 
     private static String toIsoCurrency(String currency) {

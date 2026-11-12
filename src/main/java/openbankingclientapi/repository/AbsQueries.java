@@ -28,8 +28,6 @@ final class AbsQueries {
                    a.state                                            as state_code,
                    a.acc_bal                                          as balance_account,
                    a.currency                                         as currency,
-                   a.date_open                                        as open_date,
-                   a.date_close                                       as close_date,
                    kernel.GetSOut(a.id, info.GetDay, null, a.branch)  as current_balance
               from account a
             """;

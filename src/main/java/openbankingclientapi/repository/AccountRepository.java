@@ -1,7 +1,6 @@
 package openbankingclientapi.repository;
 
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.sql.Types;
 import java.util.List;
 import java.util.Optional;
@@ -21,8 +20,6 @@ public class AccountRepository {
     }
 
     private static final RowMapper<AccountRow> MAPPER = (rs, rowNum) -> {
-        Date open = rs.getDate("open_date");
-        Date close = rs.getDate("close_date");
         BigDecimal balance = rs.getBigDecimal("current_balance");
         return new AccountRow(
                 rs.getString("ban"),
@@ -32,8 +29,6 @@ public class AccountRepository {
                 rs.getString("state_code"),
                 rs.getString("balance_account"),
                 rs.getString("currency"),
-                open == null ? null : open.toLocalDate(),
-                close == null ? null : close.toLocalDate(),
                 balance == null ? null : balance.longValue());
     };
 

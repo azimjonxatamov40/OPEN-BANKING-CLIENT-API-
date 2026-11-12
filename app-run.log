@@ -14,24 +14,20 @@
 
  :: Spring Boot ::                (v4.1.2)
 
-2026-11-11T11:36:59.181+05:00  INFO 25584 --- [           main] o.OpenBankingClientApiApplication        : Starting OpenBankingClientApiApplication using Java 17.0.20.1 with PID 25584 (/Users/uzmacboko/Desktop/OPEN BANKING CLIENT API/build/classes/java/main started by uzmacboko in /Users/uzmacboko/Desktop/OPEN BANKING CLIENT API)
-2026-11-11T11:36:59.183+05:00  INFO 25584 --- [           main] o.OpenBankingClientApiApplication        : No active profile set, falling back to 1 default profile: "default"
-2026-11-11T11:36:59.775+05:00  INFO 25584 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-11-11T11:36:59.787+05:00  INFO 25584 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-11-11T11:36:59.787+05:00  INFO 25584 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
-2026-11-11T11:36:59.818+05:00  INFO 25584 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 604 ms
-2026-11-11T11:37:00.325+05:00  INFO 25584 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-11-11T11:37:00.328+05:00  INFO 25584 --- [           main] o.OpenBankingClientApiApplication        : Started OpenBankingClientApiApplication in 1.399 seconds (process running for 1.754)
-2026-11-11T11:37:00.329+05:00  WARN 25584 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-11-11T11:37:00.329+05:00  WARN 25584 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-11-11T11:37:01.515+05:00  INFO 25584 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-11-11T11:37:01.515+05:00  INFO 25584 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-11-11T11:37:01.516+05:00  INFO 25584 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2026-11-11T11:37:01.777+05:00  INFO 25584 --- [nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 180 ms
-2026-11-11T11:39:17.856+05:00  INFO 25584 --- [io-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-11-11T11:39:23.221+05:00  INFO 25584 --- [io-8080-exec-10] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@3ffefe63
-2026-11-11T11:39:23.222+05:00  INFO 25584 --- [io-8080-exec-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-11-11T12:53:06.834+05:00  WARN 25584 --- [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m12s842ms).
-2026-11-11T12:57:44.198+05:00  WARN 25584 --- [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m37s366ms).
-2026-11-11T13:23:06.647+05:00  WARN 25584 --- [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m12s991ms).
-2026-11-11T14:40:25.092+05:00  INFO 25584 --- [nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 79 ms
+2026-11-12T10:51:20.117+05:00  INFO 28213 --- [           main] o.OpenBankingClientApiApplication        : Starting OpenBankingClientApiApplication using Java 17.0.20.1 with PID 28213 (/Users/uzmacboko/Desktop/OPEN BANKING CLIENT API/build/classes/java/main started by uzmacboko in /Users/uzmacboko/Desktop/OPEN BANKING CLIENT API)
+2026-11-12T10:51:20.118+05:00  INFO 28213 --- [           main] o.OpenBankingClientApiApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T10:51:20.455+05:00  INFO 28213 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-11-12T10:51:20.460+05:00  INFO 28213 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-12T10:51:20.461+05:00  INFO 28213 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.27]
+2026-11-12T10:51:20.478+05:00  INFO 28213 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 342 ms
+2026-11-12T10:51:20.758+05:00  INFO 28213 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-11-12T10:51:20.761+05:00  INFO 28213 --- [           main] o.OpenBankingClientApiApplication        : Started OpenBankingClientApiApplication in 0.779 seconds (process running for 0.929)
+2026-11-12T10:51:20.761+05:00  WARN 28213 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-12T10:51:20.761+05:00  WARN 28213 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-12T10:51:22.145+05:00  INFO 28213 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-12T10:51:22.145+05:00  INFO 28213 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-12T10:51:22.146+05:00  INFO 28213 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-12T10:51:22.192+05:00  INFO 28213 --- [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-12T10:51:27.413+05:00  INFO 28213 --- [nio-8080-exec-1] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@301107f1
+2026-11-12T10:51:27.414+05:00  INFO 28213 --- [nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-12T10:54:31.592+05:00  INFO 28213 --- [nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 142 ms
