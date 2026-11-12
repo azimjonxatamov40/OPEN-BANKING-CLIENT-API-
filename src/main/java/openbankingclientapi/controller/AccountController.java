@@ -42,7 +42,7 @@ public class AccountController {
     }
 
     @PostMapping("/exists")
-    public ApiResponse<Boolean> exists(@RequestBody ApiRequest<AccountKeyPayload> request) {
+    public ApiResponse<Boolean> exists(@RequestBody ApiRequest<AccountKeyPayload>   request) {
         return ApiResponse.ok(service.exists(request));
     }
 }
